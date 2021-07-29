@@ -9,7 +9,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <title>Document</title>
+    <style>
+        .fa-star{
+            color: goldenrod;
+        }
+    </style>
 </head>
 <body>
 <div class="container p-5">
@@ -22,6 +28,11 @@
                 <img class="card-img-top" src="{{$obj->thumbnail}}" alt="Card image cap" height="200px">
                 <div class="card-body">
                     <h5 class="card-title">{{$obj->name}}</h5>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
                     <p class="card-text">{{$obj->price}}$</p>
                     <a href="/add/{{$obj->id}}" class="btn btn-primary">Add To Cart</a>
                 </div>

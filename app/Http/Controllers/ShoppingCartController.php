@@ -10,7 +10,8 @@ class ShoppingCartController extends Controller
 {
     public function add($id){
         $product = Product::find($id);
-        Cart::add($product->id,$product->name,1,floatval($product->price));
+        Cart::add($product->id,$product->name,1,floatval($product->price),10,['thumbnail' => $product->thumbnail]);
+//        return $cart;
         return redirect('/show')->with('add','Thêm mới sản phẩm vào giỏ hàng thành công');
     }
     public function show(){

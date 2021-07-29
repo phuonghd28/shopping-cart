@@ -42,6 +42,7 @@
         <thead>
         <tr>
             <th>Name</th>
+            <th>Image</th>
             <th>Quantity</th>
             <th>Price</th>
             <th>Action</th>
@@ -53,6 +54,7 @@
                 <tr>
                     <input type="hidden" name="rowId" value="{{$obj->rowId}}">
                     <td>{{$obj->name}}</td>
+                    <td><img src="{{$obj->options->thumbnail}}" alt="" width="100px" style="object-fit: cover"></td>
                     <td><input type="number" min="1" name="quantity" value="{{$obj->qty}}"></td>
                     <td>{{$obj->subtotal()}}</td>
                     <td>
