@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ShoppingCartController;
 use Illuminate\Support\Facades\Route;
@@ -27,3 +28,4 @@ Route::get('/show',[ShoppingCartController::class,'show']);
 Route::get('/remove/{rowId}',[ShoppingCartController::class,'remove']);
 Route::get('/update',[ShoppingCartController::class,'update']);
 Route::get('/destroy',[ShoppingCartController::class,'destroy']);
+Route::post('/order/save',[OrderController::class,'save'])->name('saveOrder');
