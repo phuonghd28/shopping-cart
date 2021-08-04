@@ -59,6 +59,6 @@ class OrderController extends Controller
             DB::rollBack();
             return $e;
         }
-        return redirect()->route('listProduct');
+        return redirect()->route('listProduct')->with('success-msg','Bạn đã lưu giỏ hàng thành công vui lòng bấm thanh toán để hoàn tất');
     }
 }

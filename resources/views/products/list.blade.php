@@ -20,11 +20,17 @@
 <body>
 <div class="container p-5">
     @if(session('error-msg'))
-        <div class="alert alert-success alert-dismissible">
+        <div class="alert alert-danger alert-dismissible">
             <button type="button" class="close" data-dismiss="alert">&times;</button>
             <strong>Success!</strong>{{session('error-msg')}}
         </div>
     @endif
+        @if(session('success-msg'))
+            <div class="alert alert-success alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <strong>Success!</strong>{{session('success-msg')}}
+            </div>
+        @endif
     <h2 class="text-center">List Product
     </h2>
     <div class="row m-5">
