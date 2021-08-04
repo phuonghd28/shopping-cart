@@ -19,9 +19,11 @@ use Illuminate\Support\Facades\Route;
 //Route::get('/', function () {
 //    return view('welcome');
 //});
-Route::get('',[ProductController::class,'index'])->name('listProduct');
+//Route::get('',[ProductController::class,'index'])->name('listProduct');
 Route::get('/create',[ProductController::class,'create']);
 Route::post('/create',[ProductController::class,'store']);
+
+Route::view('','demo');
 
 Route::get('/add/{id}',[ShoppingCartController::class,'add']);
 Route::get('/show',[ShoppingCartController::class,'show']);
