@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\PaypalController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ShoppingCartController;
 use Illuminate\Support\Facades\Route;
@@ -30,4 +31,8 @@ Route::get('/show',[ShoppingCartController::class,'show']);
 Route::get('/remove/{rowId}',[ShoppingCartController::class,'remove']);
 Route::get('/update',[ShoppingCartController::class,'update']);
 Route::get('/destroy',[ShoppingCartController::class,'destroy']);
-Route::post('/order/save',[OrderController::class,'save'])->name('saveOrder');
+Route::post('/orders/save',[OrderController::class,'save'])->name('saveOrder');
+Route::get('/orders/{id}',[OrderController::class,'detail'])->name('detailOrder');
+
+Route::post('/paypal/create-payment',[PaypalController::class,'createPayment']);
+Route::post('/paypal/execute-payment',[PaypalController::class,'executePayment']);

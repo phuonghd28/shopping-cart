@@ -19,4 +19,8 @@ class Order extends Model
       'isCheckout',
       'status',
     ];
+
+    public function orderDetails(){
+        return $this->hasMany(OrderDetail::class,'orderId','id');
+    }
 }

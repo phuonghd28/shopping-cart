@@ -55,10 +55,17 @@ class OrderController extends Controller
             OrderDetail::insert($orderDetailArray);
             DB::commit();
             Cart::destroy();
+            return redirect()->route('detailOrder',$order->id)->with('success-msg','Bạn đã lưu giỏ hàng thành công vui lòng thanh toán để hoàn tất');
         }catch(\Exception $e){
             DB::rollBack();
             return $e;
         }
-        return redirect()->route('listProduct')->with('success-msg','Bạn đã lưu giỏ hàng thành công vui lòng bấm thanh toán để hoàn tất');
+    }
+
+    public function detail($id){
+        $order = Order::find($id);
+        return view('orders.detail',[
+            'orders' => $order,
+        ]);
     }
 }

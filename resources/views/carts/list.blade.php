@@ -79,7 +79,7 @@
     <div class="row justify-content-end">
         <div class="col-6">
             <h2 class="text-center">Ship information</h2>
-            <form action="/order/save" method="post">
+            <form name="orderForm" action="{{route('saveOrder')}}" method="post">
                 @csrf
                 <div class="row form-group">
                     <input type="text" name="shipName" class="form-control" placeholder="Enter name">
